@@ -1,0 +1,158 @@
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: #F5F5F5;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	color: #008080;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+form {
+	width: 350px;
+	height: 310px;
+	background-color: #fff;
+	text-align: center;
+	font-weight: bold;
+	border: 1px solid #008080;
+	border-style: dashed;
+}
+h3 {
+	margin: 0;
+	font-size: 16px;
+	color: #fff;
+}
+input {
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #F5F5F5;
+}
+button {
+	margin-top: 30px;
+	width: 170px;
+	height: 40px;
+	color: #fff;
+	background-color: #008080;
+	font-weight: bold;
+	border-style: none;
+	cursor: pointer;
+}
+.buttonPosition {
+	width: 100%;
+	text-align: right;
+}
+label {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	/*border: 2px solid #000;*/
+}
+/*---------------------------------------------------------------------------------------*/
+.top {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	background-color: #008080;
+	font-weight: bold;
+}
+
+.home {
+	width: 80px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+
+.authBox {
+	position: relative;
+	min-width: 200px;
+	height: 60px;
+}
+.regist {
+	position: absolute;
+	left: 0;
+	width: 130px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+.auth {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	width: 70px;
+	height: 40px;
+	text-align: center;
+	line-height: 35px;
+}
+/*-------------------------------------------------------------------------------------------------*/
+.topAuth {
+	padding-top: 20px;
+	height: 40px;
+	background-color: #008080;
+}
+.formBody {
+	padding: 20px 20px 20px 20px;
+	height: 180px;
+	/*border: 1px solid #000;*/
+
+}
+.wrapper {
+	display: flex;
+	flex-direction: row;
+        flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 60px;
+	padding-top: 100px;
+	width: 100%;
+}
+.wrapperMini {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 90px;
+	margin-bottom: 30px;
+	width: 800px;
+}
+
+.uncorrectPass {
+	margin-bottom: 15px;
+	color: red;
+	text-align: center;
+	font-weight: normal;
+}
+.logPassWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	/*border: 1px solid #000;*/
+}
+.labelBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-left: 30px;
+	width: 70px;
+	height: 100px;
+	text-align: left;
+}
+.inputBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-right: 30px;
+	width: 170px;
+	height: 100px;
+}
+
+

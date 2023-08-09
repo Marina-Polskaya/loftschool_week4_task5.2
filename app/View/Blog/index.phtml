@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<meta charset="UTF-8">
+	<title>Блог</title>
+	<link rel="stylesheet" type="text/css" href="/css/blog_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+            <div class="home">
+                <?php $user = $this->user; ?>
+                <?=$user->getName();?>
+            </div>
+            <div class="authBox"><a href="/post/new">Написать сообщение</a></div>
+            <div class="authBox">
+                   <div class="regist"><a href="/user/logout/">Выйти</a></div>
+            </div>
+    </div>
+    <div class="wrapper">
+	<div class="wrapperMini">
+            <?php $posts = $this->posts; ?>
+            <?php if ($posts): ?>
+                <?php foreach ($posts as $post): ?>
+            <div class="postBox">
+                <div class="leftBigLabel">
+                    <div class="leftLabel">
+			<div class="labelMini">
+                        <?=htmlspecialchars($post->getAuthorNameById($post->getAuthorId()));?>
+                        </div>
+                        <div class="labelMini">
+                            <?=$post->getCreatedAt();?>
+                        </div>
+                    </div>
+                    <?php if ($user->isAdmin()): ?> 
+                    <form class="deleteLabel" method="post" action="/post/delete/?id=<?=$post->getId(); ?>"><button type="submit">Удалить</button></form>
+                    <?php endif; ?>
+                </div>
+                <div class="previewBox">
+			<div class="leftPrevBox">
+                            <?php if ($post->getImage()): ?>
+                            <div class="imageBox"><img src="/Images/<?=$post->getImage();?>">"</div>
+                            <?php else: ?>
+                            <div class="imageBox"></div>
+                            <?php endif; ?>
+                        </div>
+			<div class="rightPrevBox">
+                            <div class="textPreview"><?=htmlspecialchars($post->getText());?></div>
+                            <div class="readMore">Читать полностью</div>
+			</div>
+                </div>
+            </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+            <div class="noPosts">Нет сообщений</div>
+            <?php endif; ?>
+	</div>
+    </div>
+</body>
+</html>

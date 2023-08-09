@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<meta charset="UTF-8">
+	<title>Блог</title>
+	<link rel="stylesheet" type="text/css" href="/css/post_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+	<div class="top">
+            <div class="home">
+                <?=$this->user->getName();?>
+            </div>
+            <div class="authBox"><a href="/blog">Лента сообщений</a></div>
+            <div class="authBox">
+		<div class="regist"><a href="/user/logout/">Выйти</a></div>
+            </div>
+	</div>
+    <div class="wrapper">
+	<div class="wrapperMini">
+            <form class="formPost" enctype="multipart/form-data" method="POST" action="/post/createNewPost">
+                    <label for="text">Создание сообщения</label>
+                    <div class="errorMsg">
+                    <?php if ($this->error): ?>
+                        <?=$this->error?>
+                    <?php endif; ?>
+                    </div>
+                    <textarea name="text" id="text" maxlength="255" cols="50" rows="20" placeholder="Введите текст"></textarea>
+                    <input type="file" name="image">
+                    <button type="submit" name="submit">Отправить</button>
+            </form>
+	</div>
+    </div>
+</body>
+</html>
