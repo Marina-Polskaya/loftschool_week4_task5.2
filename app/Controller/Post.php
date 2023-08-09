@@ -50,7 +50,7 @@ class Post extends \Base\AbstractController
         }
     }
     
-    public function getPostsByUserId(int $id) : ?self
+    public function getPostsByUserId(int $id) :?self
     {
         $db = \Base\Db::getInstance();
         $select = 'SELECT * FROM posts WHERE user_id = :id';
@@ -62,4 +62,11 @@ class Post extends \Base\AbstractController
         
         return new self($data);
     }    
+    
+    public function twig()
+    {
+        return $this->view->renderTwig('Post/test.twig', [
+            'var' => $this->getUserId()
+        ]);
+    }
 }
